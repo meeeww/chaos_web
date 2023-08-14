@@ -1,9 +1,13 @@
+import MainLayout from "../layout/MainLayout"
+
 function Inicio() {
 
   return (
-    <div className="bg-red-500">
-      hey
-    </div>
+    <MainLayout>
+      <div className="bg-red-500">
+        hey
+      </div>
+    </MainLayout>
   )
 }
 
