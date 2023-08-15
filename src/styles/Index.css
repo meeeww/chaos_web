@@ -6,8 +6,15 @@
 
 :root{
     --color-texto-highlight: #eb4034;
+
+    --color-texto-footer: #fefefe;
+    --color-gris: #333333;
 }
 
 body{
     font-family: 'Inter', sans-serif;
+}
+
+.quitarMaxW header{
+    max-width: none;
 }

@@ -1,12 +1,12 @@
 import MainLayout from "../layout/MainLayout"
 
+import Inscripciones from "../forms/Inscripcion"
+
 function Inicio() {
 
   return (
     <MainLayout>
-      <div className="bg-red-500">
-        hey
-      </div>
+      <Inscripciones />
     </MainLayout>
   )
 }

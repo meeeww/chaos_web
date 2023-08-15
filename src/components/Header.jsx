@@ -19,34 +19,34 @@ export default function Header() {
     ];
 
     return (
-        <div className="bg-[url('../assets/backgrounds/samira.jpg');] h-[26rem] bg-top bg-cover bg-fixed">
-            <Navbar onMenuOpenChange={setIsMenuOpen} className="h-[5rem]">
-                <NavbarContent>
+        <div className="bg-[url('../assets/backgrounds/samira.jpg');] h-[28rem] bg-top bg-cover bg-fixed">
+            <Navbar onMenuOpenChange={setIsMenuOpen} className="h-[5rem] bg-[#333333] bg-opacity-90 flex justify-between items-center quitarMaxW px-8">
+                <NavbarContent className="w-full max-w-none">
                     <NavbarMenuToggle
                         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-                        className="sm:hidden"
+                        className="sm:hidden w-full max-w-none text-[var(--color-texto-footer)]"
                     />
                     <NavbarBrand className="hidden sm:flex gap-4">
                         <img src={Logo} alt="Logo" className="h-16 mr-8"></img>
                         <div>
-                            <p className="font-semibold text-inherit text-2xl">Chaos</p>
-                            <p className="font-semibold text-inherit text-2xl">Championship</p>
+                            <p className="font-[500] text-[var(--color-texto-footer)] text-2xl">Chaos</p>
+                            <p className="font-[500] text-[var(--color-texto-footer)] text-xl">Championship</p>
                         </div>
                     </NavbarBrand>
                 </NavbarContent>
                 <NavbarContent className="sm:hidden pr-3" justify="center">
                     <NavbarBrand>
                         <img src={Logo} alt="Logo" className="h-10 mr-8"></img>
-                        <p className="font-bold text-inherit">Chaos C.S.</p>
+                        <p className="font-bold text-[var(--color-texto-footer)]">Chaos C.S.</p>
                     </NavbarBrand>
                 </NavbarContent>
-                <NavbarContent className="hidden sm:flex gap-4" justify="center">
+                <NavbarContent className="hidden sm:flex gap-12 font-semibold" justify="center">
                     <Dropdown>
                         <NavbarItem>
                             <DropdownTrigger>
                                 <Button
                                     disableRipple
-                                    className="p-0 bg-transparent data-[hover=true]:bg-transparent"
+                                    className="p-0 bg-transparent data-[hover=true]:bg-transparent text-[var(--color-texto-footer)]"
                                     endContent={<i className="fa-solid fa-caret-down text-[var(--color-texto-highlight)] text-xl"></i>}
                                     radius="sm"
                                     variant="light"
@@ -87,7 +87,7 @@ export default function Header() {
                     <NavbarItem>
                         <Button
                             disableRipple
-                            className="p-0 bg-transparent data-[hover=true]:bg-transparent"
+                            className="p-0 bg-transparent data-[hover=true]:bg-transparent text-[var(--color-texto-footer)]"
                             radius="sm"
                             variant="light"
                         >
@@ -99,7 +99,7 @@ export default function Header() {
                             <DropdownTrigger>
                                 <Button
                                     disableRipple
-                                    className="p-0 bg-transparent data-[hover=true]:bg-transparent"
+                                    className="p-0 bg-transparent data-[hover=true]:bg-transparent text-[var(--color-texto-footer)]"
                                     endContent={<i className="fa-solid fa-caret-down text-[var(--color-texto-highlight)]"></i>}
                                     radius="sm"
                                     variant="light"
@@ -116,22 +116,23 @@ export default function Header() {
                         >
                             <DropdownItem
                                 key="equipos"
-                                description="ACME scales apps to meet user demand, automagically, based on load."
+                                description="Échale un vistazo a todos los equipos de la liga."
                                 startContent={<i className="fa-solid fa-people-group w-4 text-base text-center"></i>}
                             >
                                 Equipos
                             </DropdownItem>
                             <DropdownItem
                                 key="jugadores"
-                                description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
+                                description="Información sobre los jugadores inscritos y preparados para el draft."
                                 startContent={<i className="fa-solid fa-user-plus w-4 text-base text-center"></i>}
                             >
-                                Jugadores
+                                Draft
                             </DropdownItem>
                             <DropdownItem
                                 key="staff"
                                 description="ACME runs on ACME, join us and others serving requests at web scale."
                                 startContent={<i className="fa-solid fa-clipboard-user w-4 text-base text-center"></i>}
+                                onClick={() => { window.location = "/hola" }}
                             >
                                 Staff
                             </DropdownItem>
@@ -142,7 +143,7 @@ export default function Header() {
                             <DropdownTrigger>
                                 <Button
                                     disableRipple
-                                    className="p-0 bg-transparent data-[hover=true]:bg-transparent"
+                                    className="p-0 bg-transparent data-[hover=true]:bg-transparent text-[var(--color-texto-footer)]"
                                     endContent={<i className="fa-solid fa-caret-down text-[var(--color-texto-highlight)]"></i>}
                                     radius="sm"
                                     variant="light"
