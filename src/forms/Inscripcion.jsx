@@ -16,35 +16,36 @@ export default function Inscripciones() {
     };
 
     const onSubmit = data => {
-        console.log(data)
         const datosArray = Object.values(data)
-        console.log(datosArray)
 
         let maximo = 0;
-        datosArray.forEach((dato) => {
-            console.log(localStorage.getItem("inscripcion"))
-            if (dato.length == 0 && maximo == 0) {
+        let todoRelleno = true
+        datosArray.forEach((dato, index) => {
+            if (dato.length == 0) {
                 maximo++
-                toast.error('Tienes que completar los datos')
+                todoRelleno = false
+                if(maximo == 1){
+                    toast.error('Tienes que completar los datos')
+                }
             } else if (data["principal"] == data["secundaria"] && maximo == 0) {
                 maximo++
                 toast.error('No puedes escoger la misma línea')
             } else if (localStorage.getItem("inscripcion") == "true" && maximo == 0) {
                 maximo++
                 toast.error('Ya te has inscrito')
-            } else if (data["principal"] != data["secundaria"] && dato.length != 0 && localStorage.getItem("inscripcion") != "true" && maximo == 0) {
+            } else if (data["principal"] != data["secundaria"] && todoRelleno == true && localStorage.getItem("inscripcion") != "true" && maximo == 0 && index == 6) {
                 maximo++
                 toast.promise(() => new Promise((resolve, reject) => {
                     axios.post(baseURL, data, config).then(function () {
                         resolve()
-                        localStorage.setItem("inscripcion", true)
+                        //localStorage.setItem("inscripcion", true)
                     }).catch(function () {
                         reject()
                     })
                 }), {
-                    loading: 'Enviando mensaje',
-                    success: 'Mensaje enviado',
-                    error: 'Error',
+                    loading: 'Registrando usuario',
+                    success: 'Usuario registrado',
+                    error: 'Error. Contacta con administración',
                 });
             }
         })
