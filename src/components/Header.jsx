@@ -128,14 +128,6 @@ export default function Header() {
                             >
                                 Draft
                             </DropdownItem>
-                            <DropdownItem
-                                key="staff"
-                                description="ACME runs on ACME, join us and others serving requests at web scale."
-                                startContent={<i className="fa-solid fa-clipboard-user w-4 text-base text-center"></i>}
-                                onClick={() => { window.location = "/hola" }}
-                            >
-                                Staff
-                            </DropdownItem>
                         </DropdownMenu>
                     </Dropdown>
                     <Dropdown>
@@ -160,14 +152,14 @@ export default function Header() {
                         >
                             <DropdownItem
                                 key="temporadas"
-                                description="ACME scales apps to meet user demand, automagically, based on load."
+                                description="Revisa todas las estadísticas de cada temporada."
                                 startContent={<i className="fa-solid fa-trophy w-4 text-base text-center"></i>}
                             >
                                 Temporadas
                             </DropdownItem>
                             <DropdownItem
                                 key="mvps"
-                                description="ACME runs on ACME, join us and others serving requests at web scale."
+                                description="Consulta los MVPs en todos los ámbitos de todas las temporadas"
                                 startContent={<i className="fa-solid fa-award w-4 text-base text-center"></i>}
                             >
                                 MVPs
