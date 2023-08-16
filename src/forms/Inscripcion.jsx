@@ -1,19 +1,51 @@
+import axios from "axios"
 import { useForm } from "react-hook-form";
 import { Toaster, toast } from 'sonner'
 
+import { Button } from "@nextui-org/react";
+
 export default function Inscripciones() {
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit} = useForm();
+
+    let baseURL = "https://api.chaoschampionship.com/.netlify/functions/api/inscribirse";
+
+    let config = {
+        timeout: 10000,
+        headers: { 'Content-Type': 'application/json' }
+    };
 
     const onSubmit = data => {
+        console.log(data)
         const datosArray = Object.values(data)
         console.log(datosArray)
-        
+
         let maximo = 0;
         datosArray.forEach((dato) => {
-            if(dato.length == 0 && maximo == 0){
+            console.log(localStorage.getItem("inscripcion"))
+            if (dato.length == 0 && maximo == 0) {
                 maximo++
                 toast.error('Tienes que completar los datos')
+            } else if (data["principal"] == data["secundaria"] && maximo == 0) {
+                maximo++
+                toast.error('No puedes escoger la misma línea')
+            } else if (localStorage.getItem("inscripcion") == "true" && maximo == 0) {
+                maximo++
+                toast.error('Ya te has inscrito')
+            } else if (data["principal"] != data["secundaria"] && dato.length != 0 && localStorage.getItem("inscripcion") != "true" && maximo == 0) {
+                maximo++
+                toast.promise(() => new Promise((resolve, reject) => {
+                    axios.post(baseURL, data, config).then(function () {
+                        resolve()
+                        localStorage.setItem("inscripcion", true)
+                    }).catch(function () {
+                        reject()
+                    })
+                }), {
+                    loading: 'Enviando mensaje',
+                    success: 'Mensaje enviado',
+                    error: 'Error',
+                });
             }
         })
     };
@@ -84,8 +116,8 @@ export default function Inscripciones() {
 
                 <div className="flex w-full justify-center gap-4">
                     <div>
-                        <label>Primer Posición</label>
-                        <select id="countries" {...register("primaria")} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <label>Primera Posición</label>
+                        <select id="primera" {...register("principal")} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option>Toplane</option>
                             <option>Jungla</option>
                             <option>Midlane</option>
@@ -95,7 +127,7 @@ export default function Inscripciones() {
                     </div>
                     <div>
                         <label>Segunda Posición</label>
-                        <select id="countries" {...register("secundaria")} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <select id="segunda" {...register("secundaria")} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option>Toplane</option>
                             <option>Jungla</option>
                             <option>Midlane</option>
@@ -105,7 +137,10 @@ export default function Inscripciones() {
                     </div>
                 </div>
 
-                <input type="submit" className="mt-8" />
+                <Button color="primary" variant="faded" type="submit">
+                    Enviar
+                </Button>
+
             </form >
         </>
     )
