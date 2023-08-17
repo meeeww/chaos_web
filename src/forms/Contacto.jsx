@@ -8,7 +8,7 @@ export default function Inscripciones() {
 
     const { register, handleSubmit} = useForm();
 
-    let baseURL = "https://api.chaoschampionship.com/.netlify/functions/api/enviarcorreo";
+    let baseURL = "https://api.chaoschampionship.com/.netlify/functions/api/enviarcontacto";
 
     let config = {
         timeout: 10000,
@@ -36,7 +36,7 @@ export default function Inscripciones() {
         <>
             <Toaster richColors closeButton />
             <div className="max-w-screen-xl py-16 mx-auto sm:px-6 lg:px-8 flex flex-col justify-center items-center gap-2">
-                <h1 className="text-5xl font-[800] mb-8">Inscripción de Jugadores</h1>
+                <h1 className="text-5xl font-[800] mb-8">Contacto</h1>
                 <h2>¿Quieres inscribirte como jugador para estar disponible en el mercado de fichajes?</h2>
                 <h3>¡Rellena el formularo!</h3>
             </div>
