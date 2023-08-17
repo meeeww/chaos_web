@@ -33,7 +33,7 @@ export default function Inscripciones() {
             } else if (localStorage.getItem("inscripcion") == "true" && maximo == 0) {
                 maximo++
                 toast.error('Ya te has inscrito')
-            } else if (data["principal"] != data["secundaria"] && todoRelleno == true && localStorage.getItem("inscripcion") != "true" && maximo == 0 && index == 6) {
+            } else if (data["principal"] != data["secundaria"] && todoRelleno == true && localStorage.getItem("inscripcion") != "true" && maximo == 0 && index == 5) {
                 maximo++
                 toast.promise(() => new Promise((resolve, reject) => {
                     axios.post(baseURL, data, config).then(function () {

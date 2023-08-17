@@ -24,8 +24,8 @@ export default function Inscripciones() {
                 reject()
             })
         }), {
-            loading: 'Registrando usuario',
-            success: 'Usuario registrado',
+            loading: 'Enviando mensaje',
+            success: 'Mensaje enviado',
             error: 'Error. Contacta con administración',
         });
     };
