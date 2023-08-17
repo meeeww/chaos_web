@@ -6,7 +6,7 @@ import { Button } from "@nextui-org/react";
 
 export default function Inscripciones() {
 
-    const { register, handleSubmit} = useForm();
+    const { register, handleSubmit } = useForm();
 
     let baseURL = "https://api.chaoschampionship.com/.netlify/functions/api/inscribirse";
 
@@ -24,7 +24,7 @@ export default function Inscripciones() {
             if (dato.length == 0) {
                 maximo++
                 todoRelleno = false
-                if(maximo == 1){
+                if (maximo == 1) {
                     toast.error('Tienes que completar los datos')
                 }
             } else if (data["principal"] == data["secundaria"] && maximo == 0) {
@@ -72,12 +72,12 @@ export default function Inscripciones() {
 
                     </div>
                     <div className="flex flex-col">
-                        <label>Primer Apellido</label>
+                        <label>Edad</label>
                         <div className="flex">
                             <span className="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
-                                <i className="fa-solid fa-circle-user text-gray-500 dark:text-gray-400"></i>
+                                <i className="fa-solid fa-gavel text-gray-500 dark:text-gray-400"></i>
                             </span>
-                            <input type="text" placeholder="Doe" {...register("apellido")} className="rounded-none rounded-r-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                            <input type="number" placeholder="18" {...register("edad")} className="rounded-none rounded-r-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@ export default function Inscripciones() {
                         <label>Nickname</label>
                         <div className="flex">
                             <span className="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
-                                <i className="fa-solid fa-circle-user text-gray-500 dark:text-gray-400"></i>
+                                <i className="fa-solid fa-mobile-screen-button text-gray-500 dark:text-gray-400"></i>
                             </span>
                             <input type="text" placeholder="Johnny" {...register("nick")} className="rounded-none rounded-r-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                         </div>
@@ -96,21 +96,9 @@ export default function Inscripciones() {
                         <label>Nombre de invocador</label>
                         <div className="flex">
                             <span className="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
-                                <i className="fa-solid fa-circle-user text-gray-500 dark:text-gray-400"></i>
+                                <i className="fa-solid fa-heart text-gray-500 dark:text-gray-400"></i>
                             </span>
                             <input type="text" placeholder="JohnyPanza" {...register("invocador")} className="rounded-none rounded-r-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-                        </div>
-                    </div>
-                </div>
-
-                <div className="flex w-full justify-center">
-                    <div className="flex flex-col">
-                        <label>Edad</label>
-                        <div className="flex">
-                            <span className="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
-                                <i className="fa-solid fa-circle-user text-gray-500 dark:text-gray-400"></i>
-                            </span>
-                            <input type="number" placeholder="18" {...register("edad")} className="rounded-none rounded-r-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                         </div>
                     </div>
                 </div>
