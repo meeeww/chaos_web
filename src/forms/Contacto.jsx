@@ -8,7 +8,7 @@ export default function Inscripciones() {
 
     const { register, handleSubmit} = useForm();
 
-    let baseURL = "https://api.chaoschampionship.com/.netlify/functions/api/inscribirse";
+    let baseURL = "https://api.chaoschampionship.com/.netlify/functions/api/enviarcorreo";
 
     let config = {
         timeout: 10000,
@@ -18,37 +18,18 @@ export default function Inscripciones() {
     const onSubmit = data => {
         const datosArray = Object.values(data)
 
-        let maximo = 0;
-        let todoRelleno = true
-        datosArray.forEach((dato, index) => {
-            if (dato.length == 0) {
-                maximo++
-                todoRelleno = false
-                if(maximo == 1){
-                    toast.error('Tienes que completar los datos')
-                }
-            } else if (data["principal"] == data["secundaria"] && maximo == 0) {
-                maximo++
-                toast.error('No puedes escoger la misma línea')
-            } else if (localStorage.getItem("inscripcion") == "true" && maximo == 0) {
-                maximo++
-                toast.error('Ya te has inscrito')
-            } else if (data["principal"] != data["secundaria"] && todoRelleno == true && localStorage.getItem("inscripcion") != "true" && maximo == 0 && index == 6) {
-                maximo++
-                toast.promise(() => new Promise((resolve, reject) => {
-                    axios.post(baseURL, data, config).then(function () {
-                        resolve()
-                        localStorage.setItem("inscripcion", true)
-                    }).catch(function () {
-                        reject()
-                    })
-                }), {
-                    loading: 'Registrando usuario',
-                    success: 'Usuario registrado',
-                    error: 'Error. Contacta con administración',
-                });
-            }
-        })
+        toast.promise(() => new Promise((resolve, reject) => {
+            axios.post(baseURL, {data}, config).then(function () {
+                resolve()
+                //localStorage.setItem("inscripcion", true)
+            }).catch(function () {
+                reject()
+            })
+        }), {
+            loading: 'Registrando usuario',
+            success: 'Usuario registrado',
+            error: 'Error. Contacta con administración',
+        });
     };
 
     return (

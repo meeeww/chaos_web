@@ -1,12 +1,12 @@
 import MainLayout from "../layout/MainLayout"
 
-import Inscripciones from "../forms/Inscripcion"
+import Contacto from "../forms/Contacto"
 
 function Inicio() {
 
   return (
     <MainLayout>
-      <Inscripciones />
+      <Contacto />
     </MainLayout>
   )
 }
