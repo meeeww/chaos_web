@@ -16,18 +16,35 @@ export default function Inscripciones() {
     };
 
     const onSubmit = data => {
-        toast.promise(() => new Promise((resolve, reject) => {
-            axios.post(baseURL, data, config).then(function () {
-                resolve()
-                //localStorage.setItem("inscripcion", true)
-            }).catch(function () {
-                reject()
-            })
-        }), {
-            loading: 'Enviando mensaje',
-            success: 'Mensaje enviado',
-            error: 'Error. Contacta con administración',
-        });
+        const datosArray = Object.values(data)
+
+        let maximo = 0;
+        let todoRelleno = true
+        datosArray.forEach((dato, index) => {
+            if (dato.length == 0) {
+                maximo++
+                todoRelleno = false
+                if (maximo == 1) {
+                    toast.error('Tienes que completar los datos')
+                }
+            } else if (todoRelleno == true && maximo == 0 && index == 3) {
+                console.log(todoRelleno)
+                console.log(maximo)
+                console.log(index)
+                maximo++
+                toast.promise(() => new Promise((resolve, reject) => {
+                    axios.post(baseURL, data, config).then(function () {
+                        resolve()
+                    }).catch(function () {
+                        reject()
+                    })
+                }), {
+                    loading: 'Enviando mensaje',
+                    success: 'Mensaje enviado',
+                    error: 'Error. Contacta con administración',
+                });
+            }
+        })
     };
 
     return (
