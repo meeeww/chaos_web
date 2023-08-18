@@ -28,9 +28,6 @@ export default function Inscripciones() {
                     toast.error('Tienes que completar los datos')
                 }
             } else if (todoRelleno == true && maximo == 0 && index == 3) {
-                console.log(todoRelleno)
-                console.log(maximo)
-                console.log(index)
                 maximo++
                 toast.promise(() => new Promise((resolve, reject) => {
                     axios.post(baseURL, data, config).then(function () {
