@@ -6,9 +6,12 @@ import Inicio from './pages/Inicio.jsx'
 import Contacto from './pages/Contacto.jsx'
 import Inscripcion from './pages/Inscripcion.jsx'
 
+import FichaPartido from './components/FichaPartido.jsx'
+
 import NotFound from './pages/NotFound.jsx'
 
 import './styles/Index.css'
+import './styles/Partido.css'
 
 import {
   createBrowserRouter,
@@ -19,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Inicio />,
+  },
+  {
+    path: "/partido",
+    element: <FichaPartido />,
   },
   {
     path: "/contacto",
