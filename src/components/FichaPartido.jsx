@@ -250,36 +250,178 @@ export default function FichaPartido() {
                 </div>
             </div>
             {/* jugadores */}
-            <div className="flex justify-center relative mx-[12rem] h-auto text-[var(--color-texto-fichapartido)] my-8">
-                <div className="flex flex-col gap-8 items-center">
-                    <div className="h-[10rem] w-[20rem] flex bg-[var(--color-gris)] shadow-[0px_-2px_15px_0px_rgba(0,0,0,0.75)] hover:shadow-[0px_-2px_15px_4px_rgba(0,0,0,0.75)] transition-shadow">
-                        <img className="championImagen1" src={"https://raw.communitydragon.org/13.16/plugins/rcp-be-lol-game-data/global/default/assets/characters/aatrox/skins/base/aatroxloadscreen.jpg"} alt="Toplane" />
-                        <div>
-                            <p>SupportConPanza</p>
-                            <p>Juan Zas</p>
-                            <div>
-                                <p>5/10/20 - 10 KDA</p>
-                                <p>50.2% KP</p>
-                            </div>
-                            <div>
-                                <p>0.3 CS/MIN</p>
-                                <p>705,25 DMG/MIN</p>
+            <div className="flex flex-col items-center justify-center mx-[12rem] h-auto text-[var(--color-texto-fichapartido)] my-8 gap-8">
+                <div className="flex flex-col md:flex-row gap-8 items-center">
+                    <div className="h-[10rem] w-[30rem] flex bg-[var(--color-gris)] shadow-[0px_-2px_15px_0px_rgba(0,0,0,0.75)] hover:shadow-[0px_-2px_15px_4px_rgba(0,0,0,0.75)] transition-shadow">
+                        <img className="championImagen1" src={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/1/1000.jpg"} alt="Toplane" />
+                        <div className="flex flex-col justify-evenly w-full">
+                            <p>{'Juan "SupportConPanza" Zas'}</p>
+                            <div className="flex justify-between items-center mr-4">
+                                <div>
+                                    <p>5/10/20 - 10 KDA</p>
+                                    <p>50.2% KP</p>
+                                </div>
+                                <div>
+                                    <p>0.3 CS/MIN</p>
+                                    <p>705,25 DMG/MIN</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <img className="w-[3rem] h-[3rem]" src={toplane} alt="Toplane" />
-                    <div className="h-[10rem] w-[20rem] flex bg-[var(--color-gris)] shadow-[0px_-2px_15px_0px_rgba(0,0,0,0.75)] hover:shadow-[0px_-2px_15px_4px_rgba(0,0,0,0.75)] transition-shadow">
-                        <img className="championImagen1" src={"https://raw.communitydragon.org/13.16/plugins/rcp-be-lol-game-data/global/default/assets/characters/aatrox/skins/base/aatroxloadscreen.jpg"} alt="Toplane" />
-                        <div>
-                            <p>SupportConPanza</p>
-                            <p>Juan Zas</p>
-                            <div>
-                                <p>5/10/20 - 10 KDA</p>
-                                <p>50.2% KP</p>
+                    <div className="h-[10rem] w-[30rem] flex bg-[var(--color-gris)] shadow-[0px_-2px_15px_0px_rgba(0,0,0,0.75)] hover:shadow-[0px_-2px_15px_4px_rgba(0,0,0,0.75)] transition-shadow">
+                        <img className="championImagen1" src={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/1/1000.jpg"} alt="Toplane" />
+                        <div className="flex flex-col justify-evenly w-full">
+                            <p>{'Juan "SupportConPanza" Zas'}</p>
+                            <div className="flex justify-between items-center mr-4">
+                                <div>
+                                    <p>5/10/20 - 10 KDA</p>
+                                    <p>50.2% KP</p>
+                                </div>
+                                <div>
+                                    <p>0.3 CS/MIN</p>
+                                    <p>705,25 DMG/MIN</p>
+                                </div>
                             </div>
-                            <div>
-                                <p>0.3 CS/MIN</p>
-                                <p>705,25 DMG/MIN</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="flex flex-col md:flex-row gap-8 items-center">
+                    <div className="h-[10rem] w-[30rem] flex bg-[var(--color-gris)] shadow-[0px_-2px_15px_0px_rgba(0,0,0,0.75)] hover:shadow-[0px_-2px_15px_4px_rgba(0,0,0,0.75)] transition-shadow">
+                        <img className="championImagen1" src={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/1/1000.jpg"} alt="Toplane" />
+                        <div className="flex flex-col justify-evenly w-full">
+                            <p>{'Juan "SupportConPanza" Zas'}</p>
+                            <div className="flex justify-between items-center mr-4">
+                                <div>
+                                    <p>5/10/20 - 10 KDA</p>
+                                    <p>50.2% KP</p>
+                                </div>
+                                <div>
+                                    <p>0.3 CS/MIN</p>
+                                    <p>705,25 DMG/MIN</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img className="w-[3rem] h-[3rem]" src={jungle} alt="Jungle" />
+                    <div className="h-[10rem] w-[30rem] flex bg-[var(--color-gris)] shadow-[0px_-2px_15px_0px_rgba(0,0,0,0.75)] hover:shadow-[0px_-2px_15px_4px_rgba(0,0,0,0.75)] transition-shadow">
+                        <img className="championImagen1" src={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/1/1000.jpg"} alt="Toplane" />
+                        <div className="flex flex-col justify-evenly w-full">
+                            <p>{'Juan "SupportConPanza" Zas'}</p>
+                            <div className="flex justify-between items-center mr-4">
+                                <div>
+                                    <p>5/10/20 - 10 KDA</p>
+                                    <p>50.2% KP</p>
+                                </div>
+                                <div>
+                                    <p>0.3 CS/MIN</p>
+                                    <p>705,25 DMG/MIN</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="flex flex-col md:flex-row gap-8 items-center">
+                    <div className="h-[10rem] w-[30rem] flex bg-[var(--color-gris)] shadow-[0px_-2px_15px_0px_rgba(0,0,0,0.75)] hover:shadow-[0px_-2px_15px_4px_rgba(0,0,0,0.75)] transition-shadow">
+                        <img className="championImagen1" src={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/1/1000.jpg"} alt="Toplane" />
+                        <div className="flex flex-col justify-evenly w-full">
+                            <p>{'Juan "SupportConPanza" Zas'}</p>
+                            <div className="flex justify-between items-center mr-4">
+                                <div>
+                                    <p>5/10/20 - 10 KDA</p>
+                                    <p>50.2% KP</p>
+                                </div>
+                                <div>
+                                    <p>0.3 CS/MIN</p>
+                                    <p>705,25 DMG/MIN</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img className="w-[3rem] h-[3rem]" src={mid} alt="Midlane" />
+                    <div className="h-[10rem] w-[30rem] flex bg-[var(--color-gris)] shadow-[0px_-2px_15px_0px_rgba(0,0,0,0.75)] hover:shadow-[0px_-2px_15px_4px_rgba(0,0,0,0.75)] transition-shadow">
+                        <img className="championImagen1" src={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/1/1000.jpg"} alt="Toplane" />
+                        <div className="flex flex-col justify-evenly w-full">
+                            <p>{'Juan "SupportConPanza" Zas'}</p>
+                            <div className="flex justify-between items-center mr-4">
+                                <div>
+                                    <p>5/10/20 - 10 KDA</p>
+                                    <p>50.2% KP</p>
+                                </div>
+                                <div>
+                                    <p>0.3 CS/MIN</p>
+                                    <p>705,25 DMG/MIN</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="flex flex-col md:flex-row gap-8 items-center">
+                    <div className="h-[10rem] w-[30rem] flex bg-[var(--color-gris)] shadow-[0px_-2px_15px_0px_rgba(0,0,0,0.75)] hover:shadow-[0px_-2px_15px_4px_rgba(0,0,0,0.75)] transition-shadow">
+                        <img className="championImagen1" src={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/1/1000.jpg"} alt="Toplane" />
+                        <div className="flex flex-col justify-evenly w-full">
+                            <p>{'Juan "SupportConPanza" Zas'}</p>
+                            <div className="flex justify-between items-center mr-4">
+                                <div>
+                                    <p>5/10/20 - 10 KDA</p>
+                                    <p>50.2% KP</p>
+                                </div>
+                                <div>
+                                    <p>0.3 CS/MIN</p>
+                                    <p>705,25 DMG/MIN</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img className="w-[3rem] h-[3rem]" src={adc} alt="ADC" />
+                    <div className="h-[10rem] w-[30rem] flex bg-[var(--color-gris)] shadow-[0px_-2px_15px_0px_rgba(0,0,0,0.75)] hover:shadow-[0px_-2px_15px_4px_rgba(0,0,0,0.75)] transition-shadow">
+                        <img className="championImagen1" src={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/1/1000.jpg"} alt="Toplane" />
+                        <div className="flex flex-col justify-evenly w-full">
+                            <p>{'Juan "SupportConPanza" Zas'}</p>
+                            <div className="flex justify-between items-center mr-4">
+                                <div>
+                                    <p>5/10/20 - 10 KDA</p>
+                                    <p>50.2% KP</p>
+                                </div>
+                                <div>
+                                    <p>0.3 CS/MIN</p>
+                                    <p>705,25 DMG/MIN</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="flex flex-col md:flex-row gap-8 items-center">
+                    <div className="h-[10rem] w-[30rem] flex bg-[var(--color-gris)] shadow-[0px_-2px_15px_0px_rgba(0,0,0,0.75)] hover:shadow-[0px_-2px_15px_4px_rgba(0,0,0,0.75)] transition-shadow">
+                        <img className="championImagen1" src={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/1/1000.jpg"} alt="Toplane" />
+                        <div className="flex flex-col justify-evenly w-full">
+                            <p>{'Juan "SupportConPanza" Zas'}</p>
+                            <div className="flex justify-between items-center mr-4">
+                                <div>
+                                    <p>5/10/20 - 10 KDA</p>
+                                    <p>50.2% KP</p>
+                                </div>
+                                <div>
+                                    <p>0.3 CS/MIN</p>
+                                    <p>705,25 DMG/MIN</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img className="w-[3rem] h-[3rem]" src={supp} alt="Support" />
+                    <div className="h-[10rem] w-[30rem] flex bg-[var(--color-gris)] shadow-[0px_-2px_15px_0px_rgba(0,0,0,0.75)] hover:shadow-[0px_-2px_15px_4px_rgba(0,0,0,0.75)] transition-shadow">
+                        <img className="championImagen1" src={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/1/1000.jpg"} alt="Toplane" />
+                        <div className="flex flex-col justify-evenly w-full">
+                            <p>{'Juan "SupportConPanza" Zas'}</p>
+                            <div className="flex justify-between items-center mr-4">
+                                <div>
+                                    <p>5/10/20 - 10 KDA</p>
+                                    <p>50.2% KP</p>
+                                </div>
+                                <div>
+                                    <p>0.3 CS/MIN</p>
+                                    <p>705,25 DMG/MIN</p>
+                                </div>
                             </div>
                         </div>
                     </div>
