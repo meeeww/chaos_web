@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom/client'
 
 import Inicio from './pages/Inicio.jsx'
 
+import Resultados from './pages/Resultados.jsx'
+import FichaPartido from './pages/FichaPartido.jsx'
+
 import Contacto from './pages/Contacto.jsx'
 import Inscripcion from './pages/Inscripcion.jsx'
-
-import FichaPartido from './components/FichaPartido.jsx'
 
 import NotFound from './pages/NotFound.jsx'
 
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Inicio />,
+  },
+  {
+    path: "/resultados",
+    element: <Resultados />,
   },
   {
     path: "/partido",
