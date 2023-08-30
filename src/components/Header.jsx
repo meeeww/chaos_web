@@ -27,7 +27,7 @@ export default function Header() {
                         className="sm:hidden w-full max-w-none text-[var(--color-texto-footer)]"
                     />
                     <NavbarBrand className="hidden sm:flex gap-4">
-                        <img src={Logo} alt="Logo" className="h-16 mr-8"></img>
+                        <img src={Logo} alt="Logo" className="h-16 mr-8 cursor-pointer" onClick={() => {window.location.replace("/")}}></img>
                         <div>
                             <p className="font-[500] text-[var(--color-texto-footer)] text-2xl">Chaos</p>
                             <p className="font-[500] text-[var(--color-texto-footer)] text-xl">Championship</p>
@@ -60,11 +60,13 @@ export default function Header() {
                             itemClasses={{
                                 base: "gap-4",
                             }}
+                            aria-label="Partidos"
                         >
                             <DropdownItem
                                 key="calendario"
                                 description="Comprueba las fechas de todos los partidos."
                                 startContent={<i className="fa-solid fa-calendar w-4 text-base text-center"></i>}
+                                onClick={() => {window.location.replace("/calendario")}}
                             >
                                 Calendario
                             </DropdownItem>
@@ -72,6 +74,7 @@ export default function Header() {
                                 key="resultados"
                                 description="Revisa todos los resultados de los equipos."
                                 startContent={<i className="fa-solid fa-clipboard-list w-4 text-base text-center"></i>}
+                                onClick={() => {window.location.replace("/resultados")}}
                             >
                                 Resultados
                             </DropdownItem>
@@ -79,6 +82,7 @@ export default function Header() {
                                 key="videos"
                                 description="Explora todos nuestros partidos tanto en YouTube como en Twitch."
                                 startContent={<i className="fa-solid fa-circle-play w-4 text-base text-center"></i>}
+                                onClick={() => {window.location.replace("/videos")}}
                             >
                                 Vídeos
                             </DropdownItem>
@@ -90,6 +94,7 @@ export default function Header() {
                             className="p-0 bg-transparent data-[hover=true]:bg-transparent text-[var(--color-texto-footer)]"
                             radius="sm"
                             variant="light"
+                            onClick={() => {window.location.replace("/clasificacion")}}
                         >
                             Clasificación
                         </Button>
@@ -113,11 +118,13 @@ export default function Header() {
                             itemClasses={{
                                 base: "gap-4",
                             }}
+                            aria-label="Liga"
                         >
                             <DropdownItem
                                 key="equipos"
                                 description="Échale un vistazo a todos los equipos de la liga."
                                 startContent={<i className="fa-solid fa-people-group w-4 text-base text-center"></i>}
+                                onClick={() => {window.location.replace("/equipos")}}
                             >
                                 Equipos
                             </DropdownItem>
@@ -125,6 +132,7 @@ export default function Header() {
                                 key="jugadores"
                                 description="Información sobre los jugadores inscritos y preparados para el draft."
                                 startContent={<i className="fa-solid fa-user-plus w-4 text-base text-center"></i>}
+                                onClick={() => {window.location.replace("/draft")}}
                             >
                                 Draft
                             </DropdownItem>
@@ -149,11 +157,13 @@ export default function Header() {
                             itemClasses={{
                                 base: "gap-4",
                             }}
+                            aria-label="Estadísticas"
                         >
                             <DropdownItem
                                 key="temporadas"
                                 description="Revisa todas las estadísticas de cada temporada."
                                 startContent={<i className="fa-solid fa-trophy w-4 text-base text-center"></i>}
+                                onClick={() => {window.location.replace("/temporadas")}}
                             >
                                 Temporadas
                             </DropdownItem>
@@ -161,6 +171,7 @@ export default function Header() {
                                 key="mvps"
                                 description="Consulta los MVPs en todos los ámbitos de todas las temporadas"
                                 startContent={<i className="fa-solid fa-award w-4 text-base text-center"></i>}
+                                onClick={() => {window.location.replace("/mvps")}}
                             >
                                 MVPs
                             </DropdownItem>
@@ -175,7 +186,7 @@ export default function Header() {
                                     "foreground"
                                 }
                                 className="w-full"
-                                href={item}
+                                href={item.toLocaleLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}
                                 size="lg"
                             >
                                 {item}

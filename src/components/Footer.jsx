@@ -34,9 +34,9 @@ export default function Footer() {
                                 Chaos
                             </p>
                             <nav className="flex flex-col mt-4 space-y-2 text-sm">
-                                <a className="hover:opacity-75" href> Sobre Nosotros </a>
-                                <a className="hover:opacity-75" href> Reglamento </a>
-                                <a className="hover:opacity-75" href> Trabaja con Nosotros </a>
+                                <a className="hover:opacity-75" href="sobrenosotros"> Sobre Nosotros </a>
+                                <a className="hover:opacity-75" href="reglamento"> Reglamento </a>
+                                <a className="hover:opacity-75" href="trabajaconnosotros"> Trabaja con Nosotros </a>
                             </nav>
                         </div>
                         <div className="text-[var(--color-texto-footer)]">
@@ -44,9 +44,9 @@ export default function Footer() {
                                 Links
                             </p>
                             <nav className="flex flex-col mt-4 space-y-2 text-sm">
-                                <a className="hover:opacity-75" href> Clasificación </a>
-                                <a className="hover:opacity-75" href> Calendario </a>
-                                <a className="hover:opacity-75" href> Resultados </a>
+                                <a className="hover:opacity-75" href="clasificacion"> Clasificación </a>
+                                <a className="hover:opacity-75" href="calendario"> Calendario </a>
+                                <a className="hover:opacity-75" href="resultados"> Resultados </a>
                             </nav>
                         </div>
                         <div className="text-[var(--color-texto-footer)]">
@@ -54,9 +54,9 @@ export default function Footer() {
                                 Ayuda
                             </p>
                             <nav className="flex flex-col mt-4 space-y-2 text-sm">
-                                <a className="hover:opacity-75" href> Contacto </a>
-                                <a className="hover:opacity-75" href> FAQs </a>
-                                <a className="hover:opacity-75" href> Soporte </a>
+                                <a className="hover:opacity-75" href="contacto"> Contacto </a>
+                                <a className="hover:opacity-75" href="faqs"> FAQs </a>
+                                <a className="hover:opacity-75" href="soporte"> Soporte </a>
                             </nav>
                         </div>
                         <div className="text-[var(--color-texto-footer)]">
@@ -64,8 +64,8 @@ export default function Footer() {
                                 Legal
                             </p>
                             <nav className="flex flex-col mt-4 space-y-2 text-sm">
-                                <a className="hover:opacity-75" href> Política de Privacidad </a>
-                                <a className="hover:opacity-75" href> Términos y Condiciones </a>
+                                <a className="hover:opacity-75" href="politicayprivacidad"> Política de Privacidad </a>
+                                <a className="hover:opacity-75" href="terminosycondiciones"> Términos y Condiciones </a>
                             </nav>
                         </div>
                     </div>
