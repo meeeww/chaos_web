@@ -78,14 +78,6 @@ export default function Header() {
                             >
                                 Resultados
                             </DropdownItem>
-                            <DropdownItem
-                                key="videos"
-                                description="Explora todos nuestros partidos tanto en YouTube como en Twitch."
-                                startContent={<i className="fa-solid fa-circle-play w-4 text-base text-center"></i>}
-                                onClick={() => {window.location.replace("/videos")}}
-                            >
-                                Vídeos
-                            </DropdownItem>
                         </DropdownMenu>
                     </Dropdown>
                     <NavbarItem>
