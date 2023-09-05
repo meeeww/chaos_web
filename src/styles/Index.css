@@ -18,8 +18,16 @@
     --color-texto-resultados: #fefefe;
     --color-texto-hightlight-resultados: #eb4034;
 
+    /* Clasificacion */
+    --color-texto-clasificacion: #fefefe;
+
     --color-texto-footer: #fefefe;
     --color-gris: #333333;
+}
+
+@font-face {
+    font-family: chaosFont;
+    src: url("../assets/fonts/RobotBlocks.ttf");
 }
 
 body{

@@ -20,28 +20,28 @@ export default function Header({texto}) {
     ];
 
     return (
-        <div className="bg-[url('../assets/backgrounds/samira.png');] h-[28rem] bg-top bg-cover bg-fixed">
+        <div className="bg-[url('../assets/backgrounds/samira.png');] h-[28rem] bg-cover bg-fixed">
             <Navbar onMenuOpenChange={setIsMenuOpen} className="h-[5rem] bg-[#333333] bg-opacity-90 flex justify-between items-center quitarMaxW px-8">
                 <NavbarContent className="w-full max-w-none">
                     <NavbarMenuToggle
                         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-                        className="sm:hidden w-full max-w-none text-[var(--color-texto-footer)]"
+                        className="md:hidden w-full max-w-none text-[var(--color-texto-footer)]"
                     />
-                    <NavbarBrand className="hidden sm:flex gap-4">
-                        <img src={Logo} alt="Logo" className="h-16 mr-8"></img>
-                        <div>
-                            <p className="font-[500] text-[var(--color-texto-footer)] text-2xl">Chaos</p>
-                            <p className="font-[500] text-[var(--color-texto-footer)] text-xl">Championship</p>
+                    <NavbarBrand className="hidden md:flex">
+                        <img src={Logo} alt="Logo" className="h-16 mr-4 cursor-pointer" onClick={() => {window.location.replace("/")}}></img>
+                        <div className="cursor-pointer" onClick={() => {window.location.replace("/")}}>
+                            <p className="font-[500] text-[var(--color-texto-footer)] text-2xl" style={{fontFamily: "chaosFont"}}>Chaos</p>
+                            <p className="font-[500] text-[var(--color-texto-footer)] text-lg" style={{fontFamily: "chaosFont"}}>Championship</p>
                         </div>
                     </NavbarBrand>
                 </NavbarContent>
-                <NavbarContent className="sm:hidden pr-3" justify="center">
+                <NavbarContent className="md:hidden pr-3">
                     <NavbarBrand>
                         <img src={Logo} alt="Logo" className="h-10 mr-8"></img>
                         <p className="font-bold text-[var(--color-texto-footer)]">Chaos C.S.</p>
                     </NavbarBrand>
                 </NavbarContent>
-                <NavbarContent className="hidden sm:flex gap-12 font-semibold" justify="center">
+                <NavbarContent className="hidden md:flex gap-12 font-semibold" justify="center">
                 <Dropdown>
                         <NavbarItem>
                             <DropdownTrigger>

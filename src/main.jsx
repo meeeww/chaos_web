@@ -3,7 +3,10 @@ import ReactDOM from 'react-dom/client'
 
 import Inicio from './pages/Inicio.jsx'
 
+import Calendario from './pages/Calendario.jsx'
 import Resultados from './pages/Resultados.jsx'
+import Clasificacion from './pages/Clasificacion.jsx'
+
 import FichaPartido from './pages/FichaPartido.jsx'
 
 import Contacto from './pages/Contacto.jsx'
@@ -25,8 +28,16 @@ const router = createBrowserRouter([
     element: <Inicio />,
   },
   {
+    path: "/calendario",
+    element: <Calendario />,
+  },
+  {
     path: "/resultados",
     element: <Resultados />,
+  },
+  {
+    path: "/clasificacion",
+    element: <Clasificacion />,
   },
   {
     path: "/partido",
