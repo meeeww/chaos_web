@@ -31,14 +31,14 @@ export default function Header({texto}) {
                         <img src={Logo} alt="Logo" className="h-16 mr-4 cursor-pointer" onClick={() => {window.location.replace("/")}}></img>
                         <div className="cursor-pointer" onClick={() => {window.location.replace("/")}}>
                             <p className="font-[500] text-[var(--color-texto-footer)] text-2xl" style={{fontFamily: "chaosFont"}}>Chaos</p>
-                            <p className="font-[500] text-[var(--color-texto-footer)] text-lg" style={{fontFamily: "chaosFont"}}>Championship</p>
+                            <p className="font-[500] text-[var(--color-texto-footer)] text-lg" style={{fontFamily: "chaosFont"}}>Series</p>
                         </div>
                     </NavbarBrand>
                 </NavbarContent>
                 <NavbarContent className="md:hidden pr-3">
                     <NavbarBrand>
                         <img src={Logo} alt="Logo" className="h-10 mr-8"></img>
-                        <p className="font-bold text-[var(--color-texto-footer)]">Chaos C.S.</p>
+                        <p className="font-bold text-[var(--color-texto-footer)]">Chaos Series</p>
                     </NavbarBrand>
                 </NavbarContent>
                 <NavbarContent className="hidden md:flex gap-12 font-semibold" justify="center">

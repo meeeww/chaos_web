@@ -5,6 +5,8 @@
 @tailwind utilities;
 
 :root{
+    --color-logo: #e66bff;
+
     --color-texto-highlight: #eb4034;
 
     --color-barra-header: red;
