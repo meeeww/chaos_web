@@ -2,15 +2,14 @@ import React from "react";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu } from "@nextui-org/react";
 import Logo from "../assets/logos/logo-no-text.png";
 
-// eslint-disable-next-line react/prop-types
-export default function Header({ texto }) {
+export default function Header() {
 
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     const menuItems = [
         "Calendario",
         "Resultados",
-        "Clasificacion",
+        "Clasificación",
         "Equipos",
         "Jugadores",
         "Staff",
@@ -20,7 +19,7 @@ export default function Header({ texto }) {
     ];
 
     return (
-        <div className="bg-[url('../assets/backgrounds/samira.png');] h-[28rem] bg-cover bg-fixed">
+        <div className="bg-[url('../assets/backgrounds/samira.jpg');] h-[20rem] bg-cover bg-fixed">
             <Navbar onMenuOpenChange={setIsMenuOpen} className="h-[5rem] bg-[#333333] bg-opacity-90 flex justify-between items-center quitarMaxW px-8">
                 <NavbarContent className="w-full max-w-none">
                     <NavbarMenuToggle
@@ -37,11 +36,11 @@ export default function Header({ texto }) {
                 </NavbarContent>
                 <NavbarContent className="md:hidden pr-3">
                     <NavbarBrand>
-                        <img src={Logo} alt="Logo" className="h-10 mr-8"></img>
+                        <img src={Logo} alt="Logo" className="h-10 mr-4"></img>
                         <p className="font-bold text-[var(--color-texto-footer)]">Chaos Series</p>
                     </NavbarBrand>
                 </NavbarContent>
-                <NavbarContent className="hidden md:flex gap-12 font-semibold">
+                <NavbarContent className="hidden md:flex gap-12 font-semibold" justify="center">
                     <Dropdown>
                         <NavbarItem>
                             <DropdownTrigger>
@@ -212,9 +211,6 @@ export default function Header({ texto }) {
                     ))}
                 </NavbarMenu>
             </Navbar>
-            <div className="flex justify-center items-center w-full h-full">
-                <p className="text-5xl font-[800] drop-shadow-2xl text-[var(--color-texto-footer)]">{texto}</p>
-            </div>
         </div>
     );
 }

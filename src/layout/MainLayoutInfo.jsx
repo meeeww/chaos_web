@@ -8,7 +8,7 @@ function MainLayoutInfo({children, texto}) {
     return (
         <NextUIProvider>
             <Header texto={texto}></Header>
-            <div>{children}</div>
+            <>{children}</>
             <Footer></Footer>
         </NextUIProvider>
     )

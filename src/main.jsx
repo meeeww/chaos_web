@@ -9,6 +9,9 @@ import Clasificacion from './pages/Clasificacion.jsx'
 
 import FichaPartido from './pages/FichaPartido.jsx'
 
+import InicioSesion from "./pages/InicioSesion.jsx"
+import Registro from "./pages/Registro.jsx"
+
 import Contacto from './pages/Contacto.jsx'
 import Inscripcion from './pages/Inscripcion.jsx'
 
@@ -42,6 +45,14 @@ const router = createBrowserRouter([
   {
     path: "/partido",
     element: <FichaPartido />,
+  },
+  {
+    path: "/iniciosesion",
+    element: <InicioSesion />,
+  },
+  {
+    path: "/registro",
+    element: <Registro />,
   },
   {
     path: "/contacto",

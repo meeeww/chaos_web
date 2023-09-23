@@ -1,10 +1,10 @@
 import { NextUIProvider } from '@nextui-org/react'
 
-import Header from '../components/Header.jsx'
+import Header from '../components/HeaderSesion'
 import Footer from '../components/Footer.jsx'
 
 // eslint-disable-next-line react/prop-types
-function MainLayout({children}) {
+function MainLayoutInfo({children}) {
     return (
         <NextUIProvider>
             <Header></Header>
@@ -14,4 +14,4 @@ function MainLayout({children}) {
     )
 }
 
-export default MainLayout
+export default MainLayoutInfo

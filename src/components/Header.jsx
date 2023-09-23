@@ -21,16 +21,16 @@ export default function Header() {
     return (
         <div className="bg-[url('../assets/backgrounds/samira.jpg');] h-[28rem] bg-cover bg-fixed">
             <Navbar onMenuOpenChange={setIsMenuOpen} className="h-[5rem] bg-[#333333] bg-opacity-90 flex justify-between items-center quitarMaxW px-8">
-            <NavbarContent className="w-full max-w-none">
+                <NavbarContent className="w-full max-w-none">
                     <NavbarMenuToggle
                         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                         className="md:hidden w-full max-w-none text-[var(--color-texto-footer)]"
                     />
                     <NavbarBrand className="hidden md:flex">
-                        <img src={Logo} alt="Logo" className="h-16 mr-4 cursor-pointer" onClick={() => {window.location.replace("/")}}></img>
-                        <div className="cursor-pointer" onClick={() => {window.location.replace("/")}}>
-                            <p className="font-[500] text-[var(--color-texto-footer)] text-2xl" style={{fontFamily: "chaosFont"}}>Chaos</p>
-                            <p className="font-[500] text-[var(--color-texto-footer)] text-lg" style={{fontFamily: "chaosFont"}}>Series</p>
+                        <img src={Logo} alt="Logo" className="h-16 mr-4 cursor-pointer" onClick={() => { window.location.replace("/") }}></img>
+                        <div className="cursor-pointer" onClick={() => { window.location.replace("/") }}>
+                            <p className="font-[500] text-[var(--color-texto-footer)] text-2xl" style={{ fontFamily: "chaosFont" }}>Chaos</p>
+                            <p className="font-[500] text-[var(--color-texto-footer)] text-lg" style={{ fontFamily: "chaosFont" }}>Series</p>
                         </div>
                     </NavbarBrand>
                 </NavbarContent>
@@ -66,7 +66,7 @@ export default function Header() {
                                 key="calendario"
                                 description="Comprueba las fechas de todos los partidos."
                                 startContent={<i className="fa-solid fa-calendar w-4 text-base text-center"></i>}
-                                onClick={() => {window.location.replace("/calendario")}}
+                                onClick={() => { window.location.replace("/calendario") }}
                             >
                                 Calendario
                             </DropdownItem>
@@ -74,7 +74,7 @@ export default function Header() {
                                 key="resultados"
                                 description="Revisa todos los resultados de los equipos."
                                 startContent={<i className="fa-solid fa-clipboard-list w-4 text-base text-center"></i>}
-                                onClick={() => {window.location.replace("/resultados")}}
+                                onClick={() => { window.location.replace("/resultados") }}
                             >
                                 Resultados
                             </DropdownItem>
@@ -86,7 +86,7 @@ export default function Header() {
                             className="p-0 bg-transparent data-[hover=true]:bg-transparent text-[var(--color-texto-footer)]"
                             radius="sm"
                             variant="light"
-                            onClick={() => {window.location.replace("/clasificacion")}}
+                            onClick={() => { window.location.replace("/clasificacion") }}
                         >
                             Clasificación
                         </Button>
@@ -116,7 +116,7 @@ export default function Header() {
                                 key="equipos"
                                 description="Échale un vistazo a todos los equipos de la liga."
                                 startContent={<i className="fa-solid fa-people-group w-4 text-base text-center"></i>}
-                                onClick={() => {window.location.replace("/equipos")}}
+                                onClick={() => { window.location.replace("/equipos") }}
                             >
                                 Equipos
                             </DropdownItem>
@@ -124,7 +124,7 @@ export default function Header() {
                                 key="jugadores"
                                 description="Información sobre los jugadores inscritos y preparados para el draft."
                                 startContent={<i className="fa-solid fa-user-plus w-4 text-base text-center"></i>}
-                                onClick={() => {window.location.replace("/draft")}}
+                                onClick={() => { window.location.replace("/draft") }}
                             >
                                 Draft
                             </DropdownItem>
@@ -155,7 +155,7 @@ export default function Header() {
                                 key="temporadas"
                                 description="Revisa todas las estadísticas de cada temporada."
                                 startContent={<i className="fa-solid fa-trophy w-4 text-base text-center"></i>}
-                                onClick={() => {window.location.replace("/temporadas")}}
+                                onClick={() => { window.location.replace("/temporadas") }}
                             >
                                 Temporadas
                             </DropdownItem>
@@ -163,12 +163,36 @@ export default function Header() {
                                 key="mvps"
                                 description="Consulta los MVPs en todos los ámbitos de todas las temporadas"
                                 startContent={<i className="fa-solid fa-award w-4 text-base text-center"></i>}
-                                onClick={() => {window.location.replace("/mvps")}}
+                                onClick={() => { window.location.replace("/mvps") }}
                             >
                                 MVPs
                             </DropdownItem>
                         </DropdownMenu>
                     </Dropdown>
+                </NavbarContent>
+                <NavbarContent className="hidden md:flex font-semibold" justify="end">
+                    <NavbarItem>
+                        <Button
+                            className="px-4 bg-transparent data-[hover=true]:bg-transparent text-[var(--color-texto-footer)]"
+                            radius="full"
+                            variant="ghost"
+                            color="primary"
+                            onClick={() => { window.location.replace("/iniciosesion") }}
+                        >
+                            Iniciar Sesión
+                        </Button>
+                    </NavbarItem>
+                    <NavbarItem>
+                        <Button
+                            className="py-4 text-[var(--color-texto-footer)]"
+                            radius="full"
+                            variant="solid"
+                            color="primary"
+                            onClick={() => { window.location.replace("/registro") }}
+                        >
+                            Registrarse
+                        </Button>
+                    </NavbarItem>
                 </NavbarContent>
                 <NavbarMenu className="top-[5rem]">
                     {menuItems.map((item, index) => (
