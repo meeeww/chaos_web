@@ -7,6 +7,8 @@ export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     const menuItems = [
+        "InicioSesion",
+        "Registro",
         "Calendario",
         "Resultados",
         "Clasificación",
@@ -173,10 +175,9 @@ export default function Header() {
                 <NavbarContent className="hidden md:flex font-semibold" justify="end">
                     <NavbarItem>
                         <Button
-                            className="px-4 bg-transparent data-[hover=true]:bg-transparent text-[var(--color-texto-footer)]"
+                            className="px-4 text-[var(--color-texto-footer)] border-[var(--color-texto-highlight)] bg-transparent hover:!bg-[var(--color-texto-highlight)]"
                             radius="full"
                             variant="ghost"
-                            color="primary"
                             onClick={() => { window.location.replace("/iniciosesion") }}
                         >
                             Iniciar Sesión
@@ -184,7 +185,7 @@ export default function Header() {
                     </NavbarItem>
                     <NavbarItem>
                         <Button
-                            className="py-4 text-[var(--color-texto-footer)]"
+                            className="py-4 text-[var(--color-texto-footer)] bg-[var(--color-texto-highlight)]"
                             radius="full"
                             variant="solid"
                             color="primary"
