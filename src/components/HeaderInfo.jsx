@@ -40,7 +40,7 @@ export default function Header({ texto }) {
                 <NavbarContent className="md:hidden pr-3">
                     <NavbarBrand>
                         <img src={Logo} alt="Logo" className="h-10 mr-8"></img>
-                        <p className="font-bold text-[var(--color-texto-footer)]">Chaos Series</p>
+                        <p className="font-bold text-[var(--color-texto-footer)] cursor-pointer" onClick={() => { window.location.replace("/") }}>Chaos Series</p>
                     </NavbarBrand>
                 </NavbarContent>
                 <NavbarContent className="hidden md:flex gap-12 font-semibold">
@@ -179,25 +179,26 @@ export default function Header({ texto }) {
                             className="px-4 text-[var(--color-texto-footer)] border-[var(--color-texto-highlight)] bg-transparent hover:!bg-[var(--color-texto-highlight)]"
                             radius="full"
                             variant="ghost"
-                            onClick={() => { window.location.replace("/iniciosesion") }}
+                            onClick={() => { window.open("https://panel.chaosseries.com/") }}
                         >
-                            Iniciar Sesión
-                        </Button>
-                    </NavbarItem>
-                    <NavbarItem>
-                        <Button
-                            className="py-4 text-[var(--color-texto-footer)] bg-[var(--color-texto-highlight)]"
-                            radius="full"
-                            variant="solid"
-                            color="primary"
-                            onClick={() => { window.location.replace("/registro") }}
-                        >
-                            Registrarse
+                            Inscribirse
                         </Button>
                     </NavbarItem>
                 </NavbarContent>
                 <NavbarMenu className="top-[5rem]">
-                    {menuItems.map((item, index) => (
+                    <NavbarMenuItem>
+                        <Link
+                            color={
+                                "foreground"
+                            }
+                            className="w-full"
+                            href={"https://panel.chaosseries.com/"}
+                            size="lg"
+                        >
+                            {"Inscribirse"}
+                        </Link>
+                    </NavbarMenuItem>
+                    {/* {menuItems.map((item, index) => (
                         <NavbarMenuItem key={`${item}-${index}`}>
                             <Link
                                 color={
@@ -210,7 +211,7 @@ export default function Header({ texto }) {
                                 {item}
                             </Link>
                         </NavbarMenuItem>
-                    ))}
+                    ))} */}
                 </NavbarMenu>
             </Navbar>
             <div className="flex justify-center items-center w-full h-full">

@@ -9,8 +9,7 @@ import Clasificacion from './pages/Clasificacion.jsx'
 
 import FichaPartido from './pages/FichaPartido.jsx'
 
-import InicioSesion from "./pages/InicioSesion.jsx"
-import Registro from "./pages/Registro.jsx"
+import Draft from './pages/Draft.jsx'
 
 import Contacto from './pages/Contacto.jsx'
 import Inscripcion from './pages/Inscripcion.jsx'
@@ -19,6 +18,7 @@ import NotFound from './pages/NotFound.jsx'
 
 import './styles/Index.css'
 import './styles/Partido.css'
+import './styles/Draft.css'
 
 import {
   createBrowserRouter,
@@ -43,16 +43,12 @@ const router = createBrowserRouter([
     element: <Clasificacion />,
   },
   {
+    path: "/draft",
+    element: <Draft />,
+  },
+  {
     path: "/partido",
     element: <FichaPartido />,
-  },
-  {
-    path: "/iniciosesion",
-    element: <InicioSesion />,
-  },
-  {
-    path: "/registro",
-    element: <Registro />,
   },
   {
     path: "/contacto",
