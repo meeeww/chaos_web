@@ -28,7 +28,7 @@ export default function Footer() {
                             </a>
                         </div>
                     </div>
-                    <div className="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
+                    {/* <div className="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
                         <div className="text-[var(--color-texto-footer)]">
                             <p className="font-medium">
                                 Chaos
@@ -68,7 +68,7 @@ export default function Footer() {
                                 <a className="hover:opacity-75" href="terminosycondiciones"> Términos y Condiciones </a>
                             </nav>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
                 <p className="mt-8 text-xs text-[var(--color-texto-footer)]">
                     ©{new Date().getFullYear()} Chaos Championship

@@ -43,7 +43,7 @@ export default function Header({ texto }) {
                         <p className="font-bold text-[var(--color-texto-footer)] cursor-pointer" onClick={() => { window.location.replace("/") }}>Chaos Series</p>
                     </NavbarBrand>
                 </NavbarContent>
-                <NavbarContent className="hidden md:flex gap-12 font-semibold">
+                {/* <NavbarContent className="hidden md:flex gap-12 font-semibold">
                     <Dropdown>
                         <NavbarItem>
                             <DropdownTrigger>
@@ -172,7 +172,7 @@ export default function Header({ texto }) {
                             </DropdownItem>
                         </DropdownMenu>
                     </Dropdown>
-                </NavbarContent>
+                </NavbarContent> */}
                 <NavbarContent className="hidden md:flex font-semibold" justify="end">
                     <NavbarItem>
                         <Button
