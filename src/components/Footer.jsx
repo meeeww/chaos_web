@@ -11,7 +11,7 @@ export default function Footer() {
                         La Chaos Championship es una competición a nivel amateur de eSports centrada en dar un formato diferente e innovador, centrado en diferenciarse de cualquier competición vista hasta ahora en este ámbito.
                         </p>
                         <div className="flex mt-8 space-x-6 text-[var(--color-texto-footer)]">
-                            <a className="hover:opacity-75" href="https://www.twitter.com/ChaosChampions" target="_blank" rel="noreferrer">
+                            <a className="hover:opacity-75" href="https://twitter.com/ChaosSeries_" target="_blank" rel="noreferrer">
                                 <i className="fa-brands fa-x-twitter text-xl"></i>
                             </a>
                             <a className="hover:opacity-75" href="https://www.twitch.tv/chaos_championship" target="_blank" rel="noreferrer">
@@ -23,7 +23,7 @@ export default function Footer() {
                             <a className="hover:opacity-75" href="https://www.tiktok.com/@chaoschampionship" target="_blank" rel="noreferrer">
                                 <i className="fa-brands fa-tiktok text-xl"></i>
                             </a>
-                            <a className="hover:opacity-75" href="https://www.discord.gg/nkdvxbZB4s" target="_blank" rel="noreferrer">
+                            <a className="hover:opacity-75" href="https://discord.chaosseries.com/" target="_blank" rel="noreferrer">
                                 <i className="fa-brands fa-discord text-xl"></i>
                             </a>
                         </div>
