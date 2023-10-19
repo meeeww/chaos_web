@@ -15,7 +15,7 @@ export default function Resultados() {
                     <div className="h-[30rem] w-[22rem] lg:h-[10rem] lg:w-[40rem] lg:pr-8 flex flex-col lg:flex-row justify-evenly lg:justify-between px-4 bg-[var(--color-gris)] shadow-[0px_-2px_15px_0px_rgba(0,0,0,0.75)] hover:shadow-[0px_-2px_15px_4px_rgba(0,0,0,0.75)] transition-shadow">
                         <div className="flex flex-col justify-center items-center">
                             <img src={Logo} className="w-[5rem]" alt="Equipo1" />
-                            <p className="text-sm pt-2">{"Chaos Championship"}</p>
+                            <p className="text-sm pt-2">{"Chaos Series"}</p>
                         </div>
                         <div className="flex flex-col gap-2 justify-center items-center">
                             <p className="text-[var(--color-texto-hightlight-resultados)] text-3xl font-[900]">1 : 0</p>
@@ -24,7 +24,7 @@ export default function Resultados() {
                         </div>
                         <div className="flex flex-col justify-center items-center">
                             <img src={Logo} className="w-[5rem]" alt="Equipo1" />
-                            <p className="text-sm pt-2">{"Chaos Championship"}</p>
+                            <p className="text-sm pt-2">{"Chaos Series"}</p>
                         </div>
                     </div>
                     <div className="h-[5rem] w-[22rem] lg:h-[10rem] lg:w-[10rem] flex flex-col lg:flex-row justify-evenly lg:justify-between px-4 bg-[var(--color-gris)] shadow-[0px_-2px_15px_0px_rgba(0,0,0,0.75)]">

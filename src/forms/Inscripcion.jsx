@@ -8,7 +8,7 @@ export default function Inscripciones() {
 
     const { register, handleSubmit } = useForm();
 
-    let baseURL = "https://api.chaoschampionship.com/.netlify/functions/api/inscribirse";
+    let baseURL = "https://api.chaosseries.com/.netlify/functions/api/inscribirse";
 
     let config = {
         timeout: 10000,
@@ -36,7 +36,7 @@ export default function Inscripciones() {
             } else if (data["principal"] != data["secundaria"] && todoRelleno == true && localStorage.getItem("inscripcion") != "true" && maximo == 0 && index == 6) {
                 maximo++
                 toast.promise(() => new Promise((resolve, reject) => {
-                    axios.get("https://api.chaoschampionship.com/.netlify/functions/api/usuarios/invocador=" + data["invocador"]).then(function (checkInvocadorBBDD) {
+                    axios.get("https://api.chaosseries.com/.netlify/functions/api/usuarios/invocador=" + data["invocador"]).then(function (checkInvocadorBBDD) {
                         if (checkInvocadorBBDD.data.length >= 1) {
                             if (checkInvocadorBBDD.data[0]["nombre_ingame"].toLowerCase() == data["invocador"].toLowerCase()) {
                                 reject()

@@ -21,7 +21,7 @@ export default function Clasificacion() {
                             <p className="w-[20%] font-[500]">1</p>
                             <div className="flex gap-4 items-center w-[40%] justify-center">
                                 <img src={Logo} className="h-8 w-8"></img>
-                                <p className="font-[600]">Chaos Championship</p>
+                                <p className="font-[600]">Chaos Series</p>
                             </div>
                             <p className="w-[20%]">10</p>
                             <p className="w-[20%]">6</p>

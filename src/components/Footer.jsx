@@ -8,7 +8,7 @@ export default function Footer() {
                     <div>
                         <img src={Logo} className="mr-5 h-6 sm:h-[3rem]" alt="Logo" />
                         <p className="max-w-xs mt-4 text-sm text-[var(--color-texto-footer)]">
-                        La Chaos Championship es una competición a nivel amateur de eSports centrada en dar un formato diferente e innovador, centrado en diferenciarse de cualquier competición vista hasta ahora en este ámbito.
+                        La Chaos Series es una competición a nivel amateur de eSports centrada en dar un formato diferente e innovador, centrado en diferenciarse de cualquier competición vista hasta ahora en este ámbito.
                         </p>
                         <div className="flex mt-8 space-x-6 text-[var(--color-texto-footer)]">
                             <a className="hover:opacity-75" href="https://twitter.com/ChaosSeries_" target="_blank" rel="noreferrer">
@@ -71,7 +71,7 @@ export default function Footer() {
                     </div> */}
                 </div>
                 <p className="mt-8 text-xs text-[var(--color-texto-footer)]">
-                    ©{new Date().getFullYear()} Chaos Championship
+                    ©{new Date().getFullYear()} Chaos Series
                 </p>
             </div>
         </footer>

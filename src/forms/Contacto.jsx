@@ -8,7 +8,7 @@ export default function Inscripciones() {
 
     const { register, handleSubmit } = useForm();
 
-    let baseURL = "https://api.chaoschampionship.com/.netlify/functions/api/enviarcontacto";
+    let baseURL = "https://api.chaosseries.com/.netlify/functions/api/enviarcontacto";
 
     let config = {
         timeout: 10000,
