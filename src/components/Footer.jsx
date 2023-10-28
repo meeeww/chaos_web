@@ -14,7 +14,7 @@ export default function Footer() {
                             <a className="hover:opacity-75" href="https://twitter.com/ChaosSeries_" target="_blank" rel="noreferrer">
                                 <i className="fa-brands fa-x-twitter text-xl"></i>
                             </a>
-                            <a className="hover:opacity-75" href="https://www.twitch.tv/chaos_championship" target="_blank" rel="noreferrer">
+                            <a className="hover:opacity-75" href="https://www.twitch.tv/chaosseries" target="_blank" rel="noreferrer">
                                 <i className="fa-brands fa-twitch text-xl"></i>
                             </a>
                             <a className="hover:opacity-75" href="https://www.youtube.com/@ChaosChampionship" target="_blank" rel="noreferrer">

@@ -46,7 +46,6 @@ export default function Inscripciones() {
 
     return (
         <>
-            <Toaster richColors closeButton />
             <div className="max-w-screen-xl py-16 mx-auto sm:px-6 lg:px-8 flex flex-col justify-center items-center gap-2">
                 <h1 className="text-5xl font-[800] mb-8">Contacto</h1>
                 <h2>¿Quieres inscribirte como jugador para estar disponible en el mercado de fichajes?</h2>
