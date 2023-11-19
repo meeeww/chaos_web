@@ -27,8 +27,6 @@ export default function Draft() {
         )
     }
 
-    console.log(jugadores)
-
     return (
         <MainLayoutInfo texto={"Draft"}>
             <div className="h-[3rem] flex justify-evenly items-center gap-6 bg-[var(--color-barra-header)] text-[var(--color-texto-barra-header)] font-[600]">
