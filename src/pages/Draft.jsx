@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 import { conseguirJugadores } from "../services/usuarios";
 
+import BackgroundTarjeta from "../assets/backgrounds/FondoTarjeta.jpg"
+
 import DiscordIcon from "../assets/images/RRSS/Discord.webp";
 import CTIcon from "../assets/images/RRSS/CT.webp";
 import OPGGIcon from "../assets/images/RRSS/OPGG.webp";
@@ -92,7 +94,7 @@ export default function Draft() {
           });
           return (
             <>
-              <div className="flex flex-col justify-around w-[500px] min-h-[290px] bg-tarjetaJugador text-white bg-center bg-cover px-2 py-2 rounded-[12px]">
+              <div className="flex flex-col justify-around w-[500px] min-h-[290px] text-white bg-center bg-cover px-2 py-2 rounded-[12px]" style={{backgroundImage: `url(${BackgroundTarjeta})`}}>
                 <div className="flex gap-2 mb-3 h-full md:flex-row flex-col md:items-stretch items-center w-full">
                   <div className="flex justify-center gap-4 md:w-auto w-full">
                     <div className="relative w-[152px] h-[152px]">
