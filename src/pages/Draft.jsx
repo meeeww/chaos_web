@@ -1,63 +1,234 @@
-import { useState, useEffect } from "react"
-import axios from "axios"
-import api from "../utils/variables.json"
+import { useState, useEffect } from "react";
+import { Tooltip, Spinner } from "@nextui-org/react";
+import { Link } from "react-router-dom";
 
-import MainLayoutInfo from "../layout/MainLayoutInfo"
-import Logo from "../assets/logos/logo-no-text.png"
+import { conseguirJugadores } from "../services/usuarios";
+
+import DiscordIcon from "../assets/images/RRSS/Discord.webp";
+import CTIcon from "../assets/images/RRSS/CT.webp";
+import OPGGIcon from "../assets/images/RRSS/OPGG.webp";
+import TwitterIcon from "../assets/images/RRSS/Twitter.webp";
+
+import ToplaneIcon from "../assets/league/roles/lol_top.webp";
+import JungleIcon from "../assets/league/roles/lol_jungle.webp";
+import MidlaneIcon from "../assets/league/roles/lol_mid.webp";
+import ADCIcon from "../assets/league/roles/lol_adc.webp";
+import SupportIcon from "../assets/league/roles/lol_supp.webp";
+
+import MainLayoutInfo from "../layout/MainLayoutInfo";
+
+//https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/ranked-emblem/emblem-diamond.png
 
 export default function Draft() {
+  const [jugadores, setJugadores] = useState();
+  const [cargando, setCargando] = useState(true);
 
-    const [jugadores, setJugadores] = useState()
-    const [cargando, setCargando] = useState(true)
+  useEffect(() => {
+    conseguirJugadores().then((listaJugadores) => {
+      setJugadores(listaJugadores.result);
+      setCargando(false);
+    });
+  }, []);
 
-    useEffect(() => {
-        axios.get(api.directorio + "usuarios").then((usuarios) => {
-            setJugadores(usuarios.data)
-            setCargando(false)
-        })
-    }, [])
-
-    if (cargando) {
-
-
-        return (
-            <div>
-                hey
-            </div>
-        )
-    }
-
+  if (cargando) {
     return (
-        <MainLayoutInfo texto={"Draft"}>
-            <div className="h-[3rem] flex justify-evenly items-center gap-6 bg-[var(--color-barra-header)] text-[var(--color-texto-barra-header)] font-[600]">
-                <button><i className="fa-solid fa-angles-left hover:right-1 relative transition-all"></i></button>
-                <span>Jornada 1</span>
-                <button><i className="fa-solid fa-angles-right hover:left-1 relative transition-all"></i></button>
-            </div>
-            <div className="flex flex-col 2xl:grid-cols-3 2xl:grid items-center justify-center mx-[4rem] h-auto text-[var(--color-texto-fichapartido)] my-8 gap-8">
-                {jugadores.map((jugador) => (
-                    <div key={jugador.id_jugador} className="flex flex-col lg:flex-row items-center">
-                        <div className="h-[30rem] w-[22rem] lg:h-[10rem] lg:w-[22rem] lg:pr-4 flex flex-col lg:flex-row justify-between lg:justify-between px-0 bg-[var(--color-gris)] shadow-[0px_-2px_15px_0px_rgba(0,0,0,0.75)] hover:shadow-[0px_-2px_15px_4px_rgba(0,0,0,0.75)] transition-shadow">
-                            <div className="flex flex-col justify-center items-center pr-0 w-full h-[16rem] lg:h-full lg:w-[30%]">
-                                <img src={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/1/1000.jpg"} className="w-full h-full object-cover lg:fichaUsuarioDraft" alt="Equipo1" />
-                            </div>
-                            <div className="flex flex-col gap-2 justify-center items-center lg:w-[80%] lg:text-end text-center mb-20 lg:mb-0">
-                                <p className="text-[var(--color-texto-hightlight-resultados)] text-3xl font-[900] w-full">{jugador.nick_usuario}</p>
-                                <div className="flex gap-2 lg:justify-end justify-center w-full">
-                                    <p className="text-xl font-[600]">{jugador.nombre_usuario}</p>
-                                    <p className="text-xl font-[600]">{jugador.apellido_usuario}</p>
-                                </div>
-                                <p className="text-lg font-[400] w-full">{jugador.edad + " años"}</p>
-                            </div>
-                        </div>
-                        <div className="h-[5rem] w-[22rem] lg:h-[10rem] lg:w-[5rem] flex flex-col lg:flex-row justify-evenly lg:justify-between px-4 bg-[var(--color-gris)] shadow-[0px_-2px_15px_0px_rgba(0,0,0,0.75)]">
-                            <div className="flex justify-evenly lg:justify-center items-center w-full lg:px-3">
-                                <i className="fa-brands fa-twitter text-4xl"></i>
-                            </div>
-                        </div>
+      <MainLayoutInfo texto={"Draft"}>
+        <div className="flex flex-wrap justify-center items-center m-4 gap-4 min-h-[296px]">
+          <Spinner label="Cargando..." size="lg" />
+        </div>
+      </MainLayoutInfo>
+    );
+  }
+
+  return (
+    <MainLayoutInfo texto={"Draft"}>
+      <div className="flex flex-wrap justify-center items-center m-4 gap-4">
+        {jugadores.map((jugador) => {
+          let listaOPGG = "https://www.op.gg/multisearch/euw?summoners=";
+          let primeraPosicion, primerLogo;
+          let segundaPosicion, segundoLogo;
+
+          if (jugador.cuentas.length > 0) {
+            primeraPosicion = jugador.cuentas[0].linea_principal;
+            segundaPosicion = jugador.cuentas[0].linea_secundaria;
+            switch (primeraPosicion) {
+              case "Toplane":
+                primerLogo = ToplaneIcon;
+                break;
+              case "Jungla":
+                primerLogo = JungleIcon;
+                break;
+              case "Midlane":
+                primerLogo = MidlaneIcon;
+                break;
+              case "ADC":
+                primerLogo = ADCIcon;
+                break;
+              case "Support":
+                primerLogo = SupportIcon;
+                break;
+            }
+            switch (segundaPosicion) {
+              case "Toplane":
+                segundoLogo = ToplaneIcon;
+                break;
+              case "Jungla":
+                segundoLogo = JungleIcon;
+                break;
+              case "Midlane":
+                segundoLogo = MidlaneIcon;
+                break;
+              case "ADC":
+                segundoLogo = ADCIcon;
+                break;
+              case "Support":
+                segundoLogo = SupportIcon;
+                break;
+            }
+          }
+
+          jugador.cuentas.forEach((jugadorOPGG) => {
+            listaOPGG = listaOPGG + jugadorOPGG.invocador + "%23" + jugadorOPGG.tag + "%2C";
+          });
+          return (
+            <>
+              <div className="flex flex-col justify-around w-[500px] min-h-[290px] bg-tarjetaJugador text-white bg-center bg-cover px-2 py-2 rounded-[12px]">
+                <div className="flex gap-2 mb-3 h-full md:flex-row flex-col md:items-stretch items-center w-full">
+                  <div className="flex justify-center gap-4 md:w-auto w-full">
+                    <div className="relative w-[152px] h-[152px]">
+                      <img
+                        src={
+                          "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/" + jugador.info.icono + ".jpg"
+                        }
+                        className="w-full h-full rounded-[10px]"
+                        alt="Icono Usuario"
+                      />
+                      <p className="absolute bottom-0 left-0 w-full text-center font-[700] text-3xl drop-shadow-2xl">{jugador.info.id_usuario}</p>
                     </div>
-                ))}
-            </div>
-        </ MainLayoutInfo>
-    )
+                    <div className="md:hidden flex flex-col justify-center items-start">
+                      <span className="text-2xl font-[700]">{jugador.info.nombre_usuario}</span>
+                      <span className="text-2xl font-[700] text-[var(--color-principal)]">{"'" + jugador.info.nick_usuario + "'"}</span>
+                      <span className="text-2xl font-[700]">{jugador.info.apellido_usuario}</span>
+                      <div className="flex flex-col justify-between">
+                        <div>
+                          <div className="flex justify-start items-center gap-2">
+                            <div className="w-12 flex justify-center">
+                              <img src={primerLogo} width="40" alt="Support Icon" />
+                            </div>
+                            <div className="w-full">
+                              <span className="text-lg font-[600]">{primeraPosicion}</span>
+                            </div>
+                          </div>
+                          <div className="flex justify-start items-center gap-2">
+                            <div className="w-12 flex justify-center">
+                              <img src={segundoLogo} width="25" alt="Support Icon" />
+                            </div>
+                            <div className="w-full">
+                              <span className="text-sm">{segundaPosicion}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="hidden md:flex flex-col md:justify-between justify-center md:items-stretch items-center md:w-[45%] w-full">
+                    <p className="text-2xl font-[700]">
+                      {" " + jugador.info.nombre_usuario + " '"}
+                      <span className="text-[var(--color-principal)]">{jugador.info.nick_usuario}</span>
+                      {"' " + jugador.info.apellido_usuario + ""}
+                    </p>
+                    <div className="flex flex-col justify-between">
+                      {/* <div className="flex">
+                  <Image width={80} alt="NextUI hero Image" src={ImagenRango} />
+                  <span>IV</span>
+                </div> */}
+                      <div>
+                        <div className="flex justify-start items-center gap-2">
+                          <div className="w-12 flex justify-center">
+                            <img src={primerLogo} width="40" alt="Support Icon" />
+                          </div>
+                          <div className="w-full">
+                            <span className="text-lg font-[600]">{primeraPosicion}</span>
+                          </div>
+                        </div>
+                        <div className="flex justify-start items-center gap-2">
+                          <div className="w-12 flex justify-center">
+                            <img src={segundoLogo} width="25" alt="Support Icon" />
+                          </div>
+                          <div className="w-full">
+                            <span className="text-sm">{segundaPosicion}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex md:flex-col md:justify-start md:items-end justify-center md:w-[20%] w-full md:gap-2 gap-4 mt-4 mb-2">
+                    <Tooltip content={jugador.info.discord} className="w-auto" placement="left">
+                      <img src={DiscordIcon} alt="Discord" className="w-[1.5rem] h-[1.5rem]" />
+                    </Tooltip>
+                    <Link to={listaOPGG} target="_blank">
+                      <img src={OPGGIcon} alt="OPGG" className="w-[1.5rem] h-[1.5rem]" />
+                    </Link>
+                    <Link to={"https://circuitotormenta.com/user/" + jugador.info.circuitotormenta} target="_blank">
+                      <img src={CTIcon} alt="CT" className="w-[1.5rem] h-[1.5rem]" />
+                    </Link>
+                    <Link to={"https://twitter.com/" + jugador.info.twitter} target="_blank">
+                      <img src={TwitterIcon} alt="Twitter" className="w-[1.5rem] h-[1.5rem]" />
+                    </Link>
+                  </div>
+                </div>
+                <div className="flex flex-col w-full gap-4 mb-1">
+                  <div className="grid grid-cols-2 md:grid-cols-4 w-full text-center md:text-left">
+                    <div className="md:ml-4">
+                      <p className="text-[var(--color-principal)] font-[700]">KDA</p>
+                      <p>0.0</p>
+                    </div>
+                    <div>
+                      <p className="font-[700]">ASESINATOS</p>
+                      <p>0</p>
+                    </div>
+                    <div>
+                      <p className="text-[var(--color-principal)] font-[700]">MUERTES</p>
+                      <p>0</p>
+                    </div>
+                    <div>
+                      <p className="font-[700]">ASISTENCIAS</p>
+                      <p>0</p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 md:grid-cols-4 w-full text-center md:text-left">
+                    <div className="md:ml-4">
+                      <p className="text-[var(--color-principal)] font-[700]">KP</p>
+                      <p>0%</p>
+                    </div>
+                    <div>
+                      <p className="font-[700]">CS/MIN</p>
+                      <p>0.0</p>
+                    </div>
+                    <div>
+                      <p className="text-[var(--color-principal)] font-[700]">DMG/MIN</p>
+                      <p>0.0</p>
+                    </div>
+                    <div className="flex flex-col justify-center">
+                      <div className="flex justify-center md:justify-start items-center gap-2">
+                        <p className="font-[700]">C. S.</p>
+                        <Tooltip
+                          content="La Chaos Score sigue un sistema interno para determinar el rendimiento de un jugador dentro de las partidas que juega en la liga."
+                          className="w-[12rem]"
+                          placement="right"
+                        >
+                          <i className="fa-solid fa-circle-info"></i>
+                        </Tooltip>
+                      </div>
+                      <p>50</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </>
+          );
+        })}
+      </div>
+    </MainLayoutInfo>
+  );
 }

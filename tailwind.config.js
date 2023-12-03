@@ -10,7 +10,12 @@ export default {
     'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "tarjetaJugador": "url('./src/assets/backgrounds/FondoTarjeta.jpg')"
+      },
+
+    },
   },
   darkMode: "class",
   plugins: [nextui(), require('flowbite/plugin')],

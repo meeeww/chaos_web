@@ -1,10 +1,10 @@
 import MainLayoutInfo from "../layout/MainLayoutInfo"
 
-import toplane from "../assets/league/lol_top.webp"
-import jungle from "../assets/league/lol_jungle.webp"
-import mid from "../assets/league/lol_mid.webp"
-import adc from "../assets/league/lol_adc.webp"
-import supp from "../assets/league/lol_supp.webp"
+import toplane from "../assets/league/roles/lol_top.webp"
+import jungle from "../assets/league/roles/lol_jungle.webp"
+import mid from "../assets/league/roles/lol_mid.webp"
+import adc from "../assets/league/roles/lol_adc.webp"
+import supp from "../assets/league/roles/lol_supp.webp"
 
 import Logo from "../assets/logos/logo-no-text.png"
 
