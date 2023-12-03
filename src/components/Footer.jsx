@@ -11,19 +11,19 @@ export default function Footer() {
                         La Chaos Series es una competición a nivel amateur de eSports centrada en dar un formato diferente e innovador, centrado en diferenciarse de cualquier competición vista hasta ahora en este ámbito.
                         </p>
                         <div className="flex mt-8 space-x-6 text-[var(--color-texto-footer)]">
-                            <a className="hover:opacity-75" href="https://twitter.com/ChaosSeries_" target="_blank" rel="noreferrer">
+                            <a aria-label="Twitter Chaos" className="hover:opacity-75" href="https://twitter.com/ChaosSeries_" target="_blank" rel="noreferrer">
                                 <i className="fa-brands fa-x-twitter text-xl"></i>
                             </a>
-                            <a className="hover:opacity-75" href="https://www.twitch.tv/chaosseries" target="_blank" rel="noreferrer">
+                            <a aria-label="Twitch Chaos" className="hover:opacity-75" href="https://www.twitch.tv/chaosseries" target="_blank" rel="noreferrer">
                                 <i className="fa-brands fa-twitch text-xl"></i>
                             </a>
-                            <a className="hover:opacity-75" href="https://www.youtube.com/@ChaosChampionship" target="_blank" rel="noreferrer">
+                            <a aria-label="YouTube Chaos" className="hover:opacity-75" href="https://www.youtube.com/@ChaosSeries" target="_blank" rel="noreferrer">
                                 <i className="fa-brands fa-youtube text-xl"></i>
                             </a>
-                            <a className="hover:opacity-75" href="https://www.tiktok.com/@chaoschampionship" target="_blank" rel="noreferrer">
+                            <a aria-label="TikTok Chaos" className="hover:opacity-75" href="https://www.tiktok.com/@chaos_series" target="_blank" rel="noreferrer">
                                 <i className="fa-brands fa-tiktok text-xl"></i>
                             </a>
-                            <a className="hover:opacity-75" href="https://discord.chaosseries.com/" target="_blank" rel="noreferrer">
+                            <a aria-label="Discord Chaos" className="hover:opacity-75" href="https://discord.chaosseries.com/" target="_blank" rel="noreferrer">
                                 <i className="fa-brands fa-discord text-xl"></i>
                             </a>
                         </div>
