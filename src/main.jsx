@@ -30,38 +30,38 @@ const router = createBrowserRouter([
     path: "/",
     element: <Inicio />,
   },
-  // {
-  //   path: "/calendario",
-  //   element: <Calendario />,
-  // },
-  // {
-  //   path: "/resultados",
-  //   element: <Resultados />,
-  // },
-  // {
-  //   path: "/clasificacion",
-  //   element: <Clasificacion />,
-  // },
-  // {
-  //   path: "/draft",
-  //   element: <Draft />,
-  // },
-  // {
-  //   path: "/partido",
-  //   element: <FichaPartido />,
-  // },
-  // {
-  //   path: "/contacto",
-  //   element: <Contacto />,
-  // },
-  // {
-  //   path: "/inscripcion",
-  //   element: <Inscripcion />,
-  // },
-  // {
-  //   path: "*",
-  //   element: <NotFound />,
-  // },
+  {
+    path: "/calendario",
+    element: <Calendario />,
+  },
+  {
+    path: "/resultados",
+    element: <Resultados />,
+  },
+  {
+    path: "/clasificacion",
+    element: <Clasificacion />,
+  },
+  {
+    path: "/draft",
+    element: <Draft />,
+  },
+  {
+    path: "/partido",
+    element: <FichaPartido />,
+  },
+  {
+    path: "/contacto",
+    element: <Contacto />,
+  },
+  {
+    path: "/inscripcion",
+    element: <Inscripcion />,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

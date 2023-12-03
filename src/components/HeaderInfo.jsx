@@ -1,49 +1,44 @@
-import React from "react";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu } from "@nextui-org/react";
+/* eslint-disable react/prop-types */
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Button } from "@nextui-org/react";
+import { Link } from "react-router-dom";
+
 import Logo from "../assets/logos/logo-no-text.png";
 
-// eslint-disable-next-line react/prop-types
 export default function Header({ texto }) {
-
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
-    const menuItems = [
-        "InicioSesion",
-        "Registro",
-        "Calendario",
-        "Resultados",
-        "Clasificacion",
-        "Equipos",
-        "Jugadores",
-        "Staff",
-        "Temporadas",
-        "MVPs",
-        "Vídeos",
-    ];
-
-    return (
-        <div className="bg-[url('../assets/backgrounds/samira.png');] h-[28rem] bg-cover bg-fixed">
-            <Navbar onMenuOpenChange={setIsMenuOpen} className="h-[5rem] bg-[#333333] bg-opacity-90 flex justify-between items-center quitarMaxW px-8">
-                <NavbarContent className="w-full max-w-none">
-                    <NavbarMenuToggle
-                        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-                        className="md:hidden w-full max-w-none text-[var(--color-texto-footer)]"
-                    />
-                    <NavbarBrand className="hidden md:flex">
-                        <img src={Logo} alt="Logo" className="h-16 mr-4 cursor-pointer" onClick={() => { window.location.replace("/") }}></img>
-                        <div className="cursor-pointer" onClick={() => { window.location.replace("/") }}>
-                            <p className="font-[500] text-[var(--color-texto-footer)] text-2xl" style={{ fontFamily: "chaosFont" }}>Chaos</p>
-                            <p className="font-[500] text-[var(--color-texto-footer)] text-lg" style={{ fontFamily: "chaosFont" }}>Series</p>
-                        </div>
-                    </NavbarBrand>
-                </NavbarContent>
-                <NavbarContent className="md:hidden pr-3">
-                    <NavbarBrand>
-                        <img src={Logo} alt="Logo" className="h-10 mr-8"></img>
-                        <p className="font-bold text-[var(--color-texto-footer)] cursor-pointer" onClick={() => { window.location.replace("/") }}>Chaos Series</p>
-                    </NavbarBrand>
-                </NavbarContent>
-                {/* <NavbarContent className="hidden md:flex gap-12 font-semibold">
+  return (
+    <div className="bg-[url('../assets/backgrounds/prueba.webp');] h-[28rem] bg-cover bg-fixed">
+      <Navbar className="h-[5rem] bg-[#333333] bg-opacity-90 flex justify-between items-center quitarMaxW px-8">
+        <NavbarContent className="w-full max-w-none hidden md:flex">
+          <NavbarBrand className="hidden md:flex">
+            <Link to={"/"} className="flex items-center">
+              <img src={Logo} alt="Logo" className="h-16 mr-4 cursor-pointer"></img>
+              <div>
+                <p className="font-[500] text-[var(--color-texto-footer)] text-2xl" style={{ fontFamily: "chaosFont" }}>
+                  Chaos
+                </p>
+                <p className="font-[500] text-[var(--color-texto-footer)] text-lg" style={{ fontFamily: "chaosFont" }}>
+                  Series
+                </p>
+              </div>
+            </Link>
+          </NavbarBrand>
+        </NavbarContent>
+        <NavbarContent className="md:hidden pr-6">
+          <NavbarBrand>
+            <Link to={"/"} className="flex items-center">
+              <img src={Logo} alt="Logo" className="h-16 mr-4 cursor-pointer"></img>
+              <div>
+                <p className="font-[500] text-[var(--color-texto-footer)] text-2xl" style={{ fontFamily: "chaosFont" }}>
+                  Chaos
+                </p>
+                <p className="font-[500] text-[var(--color-texto-footer)] text-lg" style={{ fontFamily: "chaosFont" }}>
+                  Series
+                </p>
+              </div>
+            </Link>
+          </NavbarBrand>
+        </NavbarContent>
+        {/* <NavbarContent className="hidden md:flex gap-12 font-semibold" justify="center">
                     <Dropdown>
                         <NavbarItem>
                             <DropdownTrigger>
@@ -173,50 +168,24 @@ export default function Header({ texto }) {
                         </DropdownMenu>
                     </Dropdown>
                 </NavbarContent> */}
-                <NavbarContent className="hidden md:flex font-semibold" justify="end">
-                    <NavbarItem>
-                        <Button
-                            className="px-4 text-[var(--color-texto-footer)] border-[var(--color-texto-highlight)] bg-transparent hover:!bg-[var(--color-texto-highlight)]"
-                            radius="full"
-                            variant="ghost"
-                            onClick={() => { window.open("https://panel.chaosseries.com/") }}
-                        >
-                            Inscribirse
-                        </Button>
-                    </NavbarItem>
-                </NavbarContent>
-                <NavbarMenu className="top-[5rem]">
-                    <NavbarMenuItem>
-                        <Link
-                            color={
-                                "foreground"
-                            }
-                            className="w-full"
-                            href={"https://panel.chaosseries.com/"}
-                            size="lg"
-                        >
-                            {"Inscribirse"}
-                        </Link>
-                    </NavbarMenuItem>
-                    {/* {menuItems.map((item, index) => (
-                        <NavbarMenuItem key={`${item}-${index}`}>
-                            <Link
-                                color={
-                                    "foreground"
-                                }
-                                className="w-full"
-                                href={item.toLocaleLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}
-                                size="lg"
-                            >
-                                {item}
-                            </Link>
-                        </NavbarMenuItem>
-                    ))} */}
-                </NavbarMenu>
-            </Navbar>
-            <div className="flex justify-center items-center w-full h-full">
-                <p className="text-5xl font-[800] drop-shadow-2xl text-[var(--color-texto-footer)]">{texto}</p>
-            </div>
-        </div>
-    );
+        <NavbarContent className="hidden md:flex font-semibold" justify="end">
+          <NavbarItem className="flex gap-4">
+            <Link to={"/draft"}>
+              <Button className="px-4 text-white border-white hover:!bg-white hover:text-black" radius="full" variant="ghost">
+                Ver Draft
+              </Button>
+            </Link>
+            <Link to={"https://panel.chaosseries.com/"}>
+              <Button className="px-4 text-white border-[var(--color-principal)] hover:!bg-[var(--color-principal)]" radius="full" variant="ghost">
+                Inscríbete
+              </Button>
+            </Link>
+          </NavbarItem>
+        </NavbarContent>
+      </Navbar>
+      <div className="flex justify-center items-center w-full h-full">
+        <p className="text-5xl font-[800] drop-shadow-2xl text-[var(--color-texto-footer)]">{texto}</p>
+      </div>
+    </div>
+  );
 }

@@ -2,7 +2,7 @@ import Logo from "../assets/logos/logo-no-text.png";
 
 export default function Footer() {
     return (
-        <footer className="px-8 bg-[url('../assets/backgrounds/samira.png');] bg-middle bg-cover bg-fixed">
+        <footer className="px-8 bg-[url('../assets/backgrounds/prueba.webp');] bg-middle bg-cover bg-fixed">
             <div className="max-w-screen-xl py-16 mx-auto sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
                     <div>
