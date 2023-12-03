@@ -22,6 +22,25 @@ import MainLayoutInfo from "../layout/MainLayoutInfo";
 //https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/ranked-emblem/emblem-diamond.png
 
 export default function Draft() {
+
+  function quitarArroba(cadena) {
+    // Verificar si la cadena es nula o indefinida
+    if (cadena === null || cadena === undefined) {
+      // Manejar el caso en el que la cadena es nula o indefinida
+      console.log("La cadena es nula o indefinida");
+      return null; // O devuelve lo que sea apropiado en tu caso
+    }
+  
+    // Verificar si la cadena comienza con "@"
+    if (cadena.startsWith('@')) {
+      // Si es así, devolver la cadena sin el primer carácter
+      return cadena.substring(1);
+    } else {
+      // Si no, devolver la cadena sin cambios
+      return cadena;
+    }
+  }
+
   const [jugadores, setJugadores] = useState();
   const [cargando, setCargando] = useState(true);
 
@@ -165,16 +184,16 @@ export default function Draft() {
                     </div>
                   </div>
                   <div className="flex md:flex-col md:justify-start md:items-end justify-center md:w-[20%] w-full md:gap-2 gap-4 mt-4 mb-2">
-                    <Tooltip content={jugador.info.discord} className="w-auto" placement="left">
+                    <Tooltip content={quitarArroba(jugador.info.discord)} className="w-auto" placement="left">
                       <img src={DiscordIcon} alt="Discord" className="w-[1.5rem] h-[1.5rem]" />
                     </Tooltip>
                     <Link to={listaOPGG} target="_blank">
                       <img src={OPGGIcon} alt="OPGG" className="w-[1.5rem] h-[1.5rem]" />
                     </Link>
-                    <Link to={"https://circuitotormenta.com/user/" + jugador.info.circuitotormenta} target="_blank">
+                    <Link to={"https://circuitotormenta.com/user/" + quitarArroba(jugador.info.circuitotormenta)} target="_blank">
                       <img src={CTIcon} alt="CT" className="w-[1.5rem] h-[1.5rem]" />
                     </Link>
-                    <Link to={"https://twitter.com/" + jugador.info.twitter} target="_blank">
+                    <Link to={"https://twitter.com/" + quitarArroba(jugador.info.twitter)} target="_blank">
                       <img src={TwitterIcon} alt="Twitter" className="w-[1.5rem] h-[1.5rem]" />
                     </Link>
                   </div>
