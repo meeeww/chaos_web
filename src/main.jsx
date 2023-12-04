@@ -41,10 +41,10 @@ const router = createBrowserRouter([
   //   path: "/clasificacion",
   //   element: <Clasificacion />,
   // },
-  // {
-  //   path: "/draft",
-  //   element: <Draft />,
-  // },
+  {
+    path: "/draft",
+    element: <Draft />,
+  },
   // {
   //   path: "/partido",
   //   element: <FichaPartido />,
