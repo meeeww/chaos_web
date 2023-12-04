@@ -12,7 +12,6 @@ import FichaPartido from './pages/FichaPartido.jsx'
 import Draft from './pages/Draft.jsx'
 
 import Contacto from './pages/Contacto.jsx'
-import Inscripcion from './pages/Inscripcion.jsx'
 
 import NotFound from './pages/NotFound.jsx'
 
@@ -30,33 +29,29 @@ const router = createBrowserRouter([
     path: "/",
     element: <Inicio />,
   },
-  {
-    path: "/calendario",
-    element: <Calendario />,
-  },
-  {
-    path: "/resultados",
-    element: <Resultados />,
-  },
-  {
-    path: "/clasificacion",
-    element: <Clasificacion />,
-  },
-  {
-    path: "/draft",
-    element: <Draft />,
-  },
-  {
-    path: "/partido",
-    element: <FichaPartido />,
-  },
+  // {
+  //   path: "/calendario",
+  //   element: <Calendario />,
+  // },
+  // {
+  //   path: "/resultados",
+  //   element: <Resultados />,
+  // },
+  // {
+  //   path: "/clasificacion",
+  //   element: <Clasificacion />,
+  // },
+  // {
+  //   path: "/draft",
+  //   element: <Draft />,
+  // },
+  // {
+  //   path: "/partido",
+  //   element: <FichaPartido />,
+  // },
   {
     path: "/contacto",
     element: <Contacto />,
-  },
-  {
-    path: "/inscripcion",
-    element: <Inscripcion />,
   },
   {
     path: "*",
